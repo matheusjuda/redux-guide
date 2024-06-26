@@ -29,6 +29,13 @@ const cartReducer = (state = initialState, action) => {
         ...state, products: [...state.products, { ...action.payload, quantity: 1 }]
       };
 
+    // Removendo produto
+    case CartActionTypes.REMOVE_PRODUCT:
+      return {
+        ...state, //Pegando todos os produtos q tem o id diferente doque estamos recebendo 
+        products: state.products.filter(product => product.id != action.payload)
+      };
+
     default:
       return state; //sempre por fim retornar ao state
   }
