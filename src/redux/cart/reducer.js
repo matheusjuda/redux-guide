@@ -9,8 +9,8 @@ const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case CartActionTypes.ADD_PRODUCT: // fazendo o payload do produto clicado
       return {
-        ...initialState,
-        products: [...initialState.products, action.payload], // Sempre retornar um objeto
+        ...state,
+        products: [...state.products, action.payload], // Sempre retornar um objeto
       };
 
     default:
