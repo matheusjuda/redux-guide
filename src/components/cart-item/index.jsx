@@ -24,7 +24,7 @@ const CartItem = ({ product }) => {
             onClick={handleDecreaseClick}
             aria-label={`Decrease quantity of ${product.name}`}
           />
-          <p>{product.quantity}</p>
+          <p>{product.quantity}</p> {/* quantidade de produtos */}
           <AiOutlinePlus
             size={20}
             onClick={handleIncreaseClick}
