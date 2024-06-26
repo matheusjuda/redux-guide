@@ -4,8 +4,8 @@ const initialState = {
   currentUser: null,
 };
 
-const userReducer = (state = initialState, action) => {
-  switch (action.type) {
+const userReducer = (state = initialState, action) => { //Assim q criar o reducer quero q o state seja initialState
+  switch (action.type) { // SE
     case UserActionTypes.LOGIN:
       return { ...state, currentUser: action.payload };
     case UserActionTypes.LOGOUT:

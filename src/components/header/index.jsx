@@ -15,13 +15,13 @@ function Header() {
 
   const dispatch = useDispatch();
 
-  const { currentUser } = useSelector((state) => state.userReducer);
+  const { currentUser } = useSelector((state) => state.userReducer); //Chamando o state user 
 
   const handleCartClick = () => {
     setCartIsVisible(true);
   };
 
-  const handleLoginClick = () => {
+  const handleLoginClick = () => { // mudando o state apartir do click
     dispatch(loginUser({ name: "Felipe Rocha", email: "felipe@rocha.com" }));
   };
 
