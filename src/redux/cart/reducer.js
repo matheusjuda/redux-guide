@@ -36,6 +36,15 @@ const cartReducer = (state = initialState, action) => {
         products: state.products.filter(product => product.id != action.payload)
       };
 
+    case CartActionTypes.INCREASE_PRODUCT_QUANTITY:
+      return {
+        ...state, // verificar se o id do produto atual é igual do produto que estamos recebendo vamos aumentar a quantidade dele
+        products: state.products.map(product =>
+          product.id === action.payload
+            ? { ...product, quantity: product.quantity + 1 }
+            : product)
+      };
+
     default:
       return state; //sempre por fim retornar ao state
   }
